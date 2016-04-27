@@ -19,7 +19,8 @@ $(".players.index").ready(function(){
   	el:"#players",
 
     events: {
-        'click .btn_hide' : 'onHidePlayer'
+        'click .btn_hide' : 'onHidePlayer',
+        'click .btn_show' : 'onShowLogo'
       },
 
     /*
@@ -49,6 +50,11 @@ $(".players.index").ready(function(){
     {
         console.log("Clicked on .hide, elem: %o", evt.target);
         $(evt.target).parent().parent().fadeOut();
+    },
+
+    onShowLogo:function(evt)
+    {
+      $(evt.target).parent().next().children().attr('style','display:block');           
     },
 
     render:function()
